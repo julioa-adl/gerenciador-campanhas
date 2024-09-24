@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Gerenciador de Campanhas
 
-## Getting Started
+Bem-vindo ao **Gerenciador de Campanhas**, uma aplicação web para gerenciar campanhas de marketing. Esta aplicação permite criar, editar, ativar/inativar e visualizar campanhas, com validações de datas e persistência de dados utilizando o `localStorage`.
 
-First, run the development server:
+## Instalação
+
+Siga os passos abaixo para configurar o projeto localmente:
+
+1. **Clone o repositório**
+
+   ```bash
+   git clone git@github.com:julioa-adl/gerenciador-campanhas.git
+   ```
+
+## Como rodar
+
+Primeiro, instale as dependências:
+
+```bash
+npm install
+```
+Depois podemos rodar o projeto:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra em [http://localhost:3000](http://localhost:3000) no seu navegador.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Sumário
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- [Recursos](#recursos)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Pré-requisitos](#pré-requisitos)
+- [Instalação](#instalação)
+- [Como Executar o Aplicativo](#como-executar-o-aplicativo)
+- [Uso](#uso)
+- [Configuração Adicional](#configuração-adicional)
+- [Considerações de Segurança](#considerações-de-segurança)
+- [Licença](#licença)
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Recursos
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Autenticação Simples**: Tela de login para acessar a aplicação.
+- **Dashboard**: Visualização gráfica das campanhas ativas, inativas e expiradas.
+- **Listagem de Campanhas**: Visualize todas as campanhas com informações detalhadas.
+- **Adicionar Campanha**: Crie novas campanhas com validação de dados.
+- **Editar Campanha**: Edite campanhas existentes.
+- **Ativar/Inativar Campanha**: Controle o status das campanhas.
+- **Persistência de Dados**: Utiliza `localStorage` para armazenar campanhas entre sessões.
+- **Validações de Data**:
+  - `dataFim` deve ser sempre maior que `dataInicio`.
+  - `dataInicio` deve ser igual ou posterior à data atual.
+  - Campanhas com `dataFim` anterior à data atual são marcadas como **Expirada**.
+- **Interface Responsiva**: Compatível com dispositivos móveis e desktops.
+- **Skeleton Loader**: Simula requisições com atraso de 3 segundos ao carregar dados.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Tecnologias Utilizadas
 
-## Deploy on Vercel
+- **Next.js**: Framework React para desenvolvimento web.
+- **React**: Biblioteca JavaScript para construção de interfaces de usuário.
+- **Tailwind CSS**: Framework CSS utilitário para estilização.
+- **React Icons**: Biblioteca de ícones para React.
+- **React Toastify**: Notificações toast para feedback ao usuário.
+- **Chart.js e React Chart.js 2**: Gráficos para visualização de dados na dashboard.
+- **@headlessui/react**: Componentes UI sem estilo para React.
+- **localStorage**: Para persistência de dados no navegador.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Pré-requisitos
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **Node.js**: Versão 20 ou superior.
+- **npm** ou **yarn**: Gerenciador de pacotes.
